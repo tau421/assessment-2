@@ -78,7 +78,15 @@ const canWeDeliver = (zipCode) => {
 */
 
 // CODE HERE
-
+const canWeDeliverTwo = (zipCode, arr) => {
+    for (i = 0; i < arr.length; i++){
+        if (arr[i] === zipCode){
+            return `You're in our delivery zone!`
+        }
+    }
+    return `Sorry, we can't deliver to that address.`
+}
+console.log(canWeDeliverTwo(85555, deliveryAreaZipCodes))
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
