@@ -31,8 +31,14 @@
 */
 
 //CODE HERE
-
-
+const pizza = {
+    name: 'Spicy Stuff',
+    price: 10,
+    category: 'Entree',
+    popularity: 0,
+    rating: 1,
+    tags: ['adults', 'gluten-free', 'weird']
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -43,7 +49,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +59,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,7 +69,8 @@
 */
 
 //CODE HERE
-
+let {price} = pizza;
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +80,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +96,38 @@
 */
 
 //CODE HERE
-
+const foodArr = [
+    {name: 'Spicy Stuff x2',
+    price: 11,
+    category: 'Entree',
+    popularity: 0.5,
+    rating: 1.5,
+    tags: ['adults', 'gluten-free', 'weird']},
+    {name: 'Mild Stuff',
+    price: 9,
+    category: 'Entree',
+    popularity: 6,
+    rating: 2,
+    tags: ['kids', 'boring', 'best seller']},
+    {name: 'Soup',
+    price: 8,
+    category: 'Appetizer',
+    popularity: 3,
+    rating: 7,
+    tags: ['soupy', 'bowl', 'spoon']},
+    {name: 'Bread',
+    price: 7,
+    category: 'Appetizer',
+    popularity: 4,
+    rating: 1,
+    tags: ['gluten', 'saucy', 'dry']},
+    {name: 'The Good One',
+    price: 8,
+    category: 'Entree',
+    popularity: 5,
+    rating: 9,
+    tags: ['best', 'special', 'favorite']}
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,9 +144,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter((element => element.tags.includes('dry')))
 
-
+console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,7 +188,17 @@
 */
 
 //CODE HERE
-
+const filterByProperty = (property, num, type) => {
+    const tripleFilteredFood = foodArr.filter(element => {
+        if (type === 'above' && element[property] > num){
+            return element
+        }
+        else if (type === 'below' && element[property] < num){
+            return element
+        }
+    })
+    return tripleFilteredFood   
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +208,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 5, 'above'))
