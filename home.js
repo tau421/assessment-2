@@ -86,7 +86,7 @@ const canWeDeliverTwo = (zipCode, arr) => {
     }
     return `Sorry, we can't deliver to that address.`
 }
-console.log(canWeDeliverTwo(85555, deliveryAreaZipCodes))
+// console.log(canWeDeliverTwo(85555, deliveryAreaZipCodes))
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -121,8 +121,6 @@ const deals = [
 */
 
 //CODE HERE
-
-
 
 /*
     The restaurant is going to continue its
