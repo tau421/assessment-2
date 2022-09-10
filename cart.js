@@ -35,8 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,8 +55,11 @@ const cart = [
 
 //CODE HERE
 
-
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    cartTotal =+ (cartTotal + (cartTotal * tax)) - couponValue;
+    return cartTotal
+}
+console.log(calcFinalPrice(5, 2, .05))
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -80,6 +83,12 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+Name property: Knowing their name is helpful; string
+Favorites property: Having a usual order helps customers order quickly; string
+Age property: Kids, teens, adults, senior citizens all have different eating habits; number
+Allergies property: Restaurants need to know food allergies to keep customers safe; string or possibly array of strings
+Special requests property: Knowing what special requests customers make will keep them happy; string or possibly array of strings
+
 */
 
 /*
@@ -88,3 +97,10 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: 'Bill',
+    age: 45,
+    allergies: ['gluten', 'dairy'],
+    favorites: 'fried pickles',
+    specialRequest: ['extra crispy fries', 'no ice']
+}
